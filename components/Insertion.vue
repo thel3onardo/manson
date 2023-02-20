@@ -14,5 +14,5 @@ watch(x, (val) => {
 </script>
 
 <template>
-    <p ref="target" class="text-red-500">Hello</p>
+    <p ref="target" class="text-blue-500 font-manrope text-4xl font-bold uppercase">Hello</p>
 </template>

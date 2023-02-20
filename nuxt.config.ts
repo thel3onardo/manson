@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
     modules: [
         '@vueuse/nuxt',
-        '@nuxtjs/google-fonts',
+        ['@nuxtjs/google-fonts', { families: { Manrope: [400, 700] }}],
         '@nuxtjs/tailwindcss'
     ],
 })
