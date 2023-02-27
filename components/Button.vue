@@ -8,19 +8,23 @@ const props = defineProps({
       type: Boolean,
       required: false,
    },
+   loading: {
+      type: Boolean,
+      default: false,
+   },
 })
 </script>
 
 <template>
    <button
-      class="px-7 py-4 group flex items-center"
+      class="px-7 py-4 group flex items-center justify-center"
       :class="{
          'bg-transparent border border-black hover:bg-black': outlined,
          'bg-orange-500 hover:opacity-70': background,
       }"
    >
       <span
-         class="uppercase font-manrope font-bold tracking-wider transition"
+         class="flex items-center uppercase font-manrope font-bold tracking-wider transition"
          :class="{
             'text-white': background,
             'text-black group-hover:text-white': outlined,
@@ -28,7 +32,12 @@ const props = defineProps({
                !outlined && !background,
          }"
       >
-         <slot />
+         <template v-if="loading">
+            <Loader />
+         </template>
+         <template v-else>
+            <slot />
+         </template>
       </span>
       <Icon
          v-if="!background && !outlined"
