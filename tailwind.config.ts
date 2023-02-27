@@ -5,6 +5,12 @@ export default <Partial<Config>>{
     extend: {
       fontFamily: {
         manrope: ['Manrope', 'sans-serif']
+      },
+      colors: {
+        orange: {
+            500: '#D87D4A',
+            200: '#FBAF85'
+        }
       }
     }
   }
